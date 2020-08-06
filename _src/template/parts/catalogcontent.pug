@@ -1,0 +1,57 @@
+section.catalog-home(data-aos='fade-up')
+    .container
+        h1 Каталог товаров
+
+section.catalog-goods(data-aos='fade-up')
+    .container
+        .goods
+            a.goods-item(href='#')
+                .item-img
+                    picture
+                        source(media="(min-width: 1250px)" srcset="images/catalog-desktop-1.png")
+                        source(media="(min-width: 768px)" srcset="images/catalog-tablet-1.png")
+                        img(src="images/catalog-mobile-1.png" alt="Item - 1")
+                .item-desc
+                    h3 Зайчик-попрыгайчик
+                    p Рост 30 см, вес 200 г
+                    .item-price
+                        b 1 200 руб.
+                        .cart-icon
+            a.goods-item(href='#')
+                .item-img
+                    picture
+                        source(media="(min-width: 1250px)" srcset="images/catalog-desktop-2.png")
+                        source(media="(min-width: 768px)" srcset="images/catalog-tablet-2.png")
+                        img(src="images/catalog-mobile-2.png" alt="Item - 2")
+
+                .item-desc
+                    h3 Корзинка для белья
+                    p Диаметр 15 см, высота 10 см
+                    .item-price
+                        b 690 руб.
+                        .cart-icon
+            a.goods-item(href='#')
+                .item-img
+                    picture
+                        source(media="(min-width: 1250px)" srcset="images/catalog-desktop-3.png")
+                        source(media="(min-width: 768px)" srcset="images/catalog-tablet-3.png")
+                        img(src="images/catalog-mobile-3.png" alt="Item - 3")
+
+                .item-desc
+                    h3 Большая корзинка <br>для игрушек
+                    p Диаметр 30 см, высота 30 см
+                    .item-price
+                        b 1 500 руб.
+                        .cart-icon
+
+section.catalog-movie(data-aos='fade-up')
+    .container
+        .movie
+
+            h3 Процесс производства
+
+            .movie-desc
+                p По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
+                a.btn(href="#") Сделать заказ
+
+            button.play-pause

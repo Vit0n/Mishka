@@ -1,0 +1,166 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+a,
+img,
+table,
+th,
+tr,
+picture,
+button {
+    padding: 0;
+    margin: 0;
+    color: black;
+    background: none;
+    border: none;
+    text-decoration: none;
+    text-align: left;
+    list-style: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+    line-height: 24px;
+    font-family: $ff-opensans;
+    font-weight: normal;
+    min-width: $mobile-width;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.btn {
+    @extend %t-btn;
+    display: block;
+    padding: 12px 100px;
+    color: $grey;
+    background-color: white;
+    text-align: center;
+    border: 2px solid $grey;
+    transition: background-color 0.3s linear;
+    &:hover {
+        color: white;
+        background-color: $grey;
+    }
+}
+
+//* mobile width
+
+body {
+    min-width: $mobile-width;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+//* tablet
+
+@media (min-width: $tablet-width) {
+    body {
+        min-width: $tablet-width;
+    }
+    .container {
+        padding: 0px 50px;
+    }
+}
+
+//* desktop
+
+@media (min-width: $desktop-width) {
+    header {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    body {
+        margin: 0 auto;
+    }
+    .container {
+        max-width: 1050px;
+        padding: 0 100px;
+        margin: 0 auto;
+    }
+}
+
+section.catalog-home,
+section.form-preview {
+    position: relative;
+    background-color: #f1f1f1;
+    h1 {
+        font-size: 27px;
+        line-height: 30px;
+        text-align: center;
+        padding-top: 70px;
+        padding-bottom: 75px;
+    }
+    @include response-from(tablet) {
+        h1 {
+            font-size: 43px;
+            line-height: 50px;
+            z-index: -1;
+            padding-top: 100px;
+            padding-bottom: 90px;
+            margin-top: -46px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 24px;
+            max-height: 34px;
+            padding-top: 0.8%;
+            background-image: url('../images/zigzag-fill-desktop.svg');
+            background-repeat: repeat-x;
+            background-position: 50% 100%;
+            background-size: contain;
+        }
+    }
+
+    @include response-from(desktop) {
+        h1 {
+            font-size: 53px;
+            line-height: 57px;
+            padding-bottom: 120px;
+            margin-top: 0;
+        }
+    }
+}
+
+//* disable AOS on mobiles
+@media (max-width: 767px) {
+    [data-aos] {
+        -webkit-transform: translateX(0) !important;
+        transform: translateX(0) !important;
+        transition: none !important;
+    }
+}

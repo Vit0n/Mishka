@@ -1,0 +1,27 @@
+@import "vars";
+@import "typo";
+@import "mixins";
+@import "main";
+
+// footer and header
+
+@import "parts/header";
+@import "parts/footer";
+
+// main content
+
+@import "parts/catalog-preview";
+@import "parts/content-preview";
+@import "parts/about-us";
+@import "parts/feedbacks";
+@import "parts/contacts";
+
+// form content
+
+@import "parts/order-form";
+
+// catalog content
+
+@import "parts/catalog";
+
+@import "parts/modals";

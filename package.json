@@ -1,0 +1,31 @@
+{
+    "name": "template",
+    "version": "1.1.0",
+    "description": "",
+    "author": "Viton",
+    "license": "Unlicense",
+    "dependencies": {
+        "gulp-install": "*",
+        "node-sass": "^4.13.0"
+    },
+    "devDependencies": {
+        "@babel/core": "*",
+        "@babel/preset-env": "*",
+        "autoprefixer": "*",
+        "babel": "*",
+        "browser-sync": "^2.26.7",
+        "del": "*",
+        "gulp": "*",
+        "gulp-autoprefixer": "*",
+        "gulp-babel": "*",
+        "gulp-group-css-media-queries": "*",
+        "gulp-load-plugins": "*",
+        "gulp-postcss": "*",
+        "gulp-pug": "*",
+        "gulp-rename": "*",
+        "gulp-sass": "*",
+        "gulp-sourcemaps": "*",
+        "postcss-unprefix": "*",
+        "pug": "*"
+    }
+}

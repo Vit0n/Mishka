@@ -1,0 +1,84 @@
+section.form-preview(data-aos='fade-up')
+    .container
+
+        h1 Вязание на заказ
+
+section.order-form
+
+    .container
+
+        p Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.
+
+    form.feedback-form(action='post')
+        .form-block--wrapper(data-aos='slide-left')
+            .form-block.radiobuttons
+                h2 Тип
+                .form-input-item.radio-item
+                    label Аксессуар для интерьера
+                        input(type="radio" name="radio" checked)
+                        span.checkmark-radio
+                .form-input-item.radio-item
+                    label Детская игрушка
+                        input(type="radio" name="radio")
+                        span.checkmark-radio
+
+        .form-block--wrapper.dark--bg.checkboxes--wrapper(data-aos='slide-right')
+            .form-block.checkboxes
+                h2 Цвет
+                .form-input-item
+                    label Белый
+                        input(type="checkbox" value='white' checked)
+                        span.checkmark-tick
+                .form-input-item
+                    label Серый
+                        input(type="checkbox" value='gray')
+                        span.checkmark-tick
+                .form-input-item
+                    label «Тиффани»
+                        input(type="checkbox" value='tiffany')
+                        span.checkmark-tick
+                .form-input-item
+                    label Черный
+                        input(type="checkbox" value='black')
+                        span.checkmark-tick
+                .form-input-item
+                    label Розовый
+                        input(type="checkbox" value='pink')
+                        span.checkmark-tick
+                .form-input-item
+                    label Оранжевый
+                        input(type="checkbox" value='orange')
+                        span.checkmark-tick
+
+        .form-block--wrapper(data-aos='slide-left')
+            .form-block.fullname
+                h2.fullname-fio Фио
+                .form-input-item
+                    label(for="firstname") Имя:
+                    input#firstname(type="text" placeholder='Введите ваше имя*' required)
+                .form-input-item
+                    label(for="lastname") Фамилия:
+                    input#lastname(type="text" placeholder='Укажите фамилию*' required)
+                .form-input-item
+                    label(for="patronymic") Отчество:
+                    input#patronymic(type="text" placeholder='Отчество, если желаете')
+
+        .form-block--wrapper.dark--bg(data-aos='slide-right')
+            .form-block.contacts
+                h2.contacts-phone Тел
+                .form-input-item
+                    input.phone-item(type="number" placeholder='+7 ХХХ ХХ ХХ*' required)
+                h2.contacts-email E-mail
+                .form-input-item
+                    input.email-item(type="email" placeholder='Ваш Email*' required)
+
+        .form-block--wrapper(data-aos='slide-left')
+            .form-block.additional-info
+                h2 Доп
+                .form-input-item
+                    textarea(placeholder='Опишите все ваши пожелания к заказу')
+
+        .form-block--wrapper(data-aos='slide-right')
+            .form-block.send-data
+                button.btn Отправить заказ
+                span *Поля обязательны для заполнения

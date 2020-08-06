@@ -1,0 +1,172 @@
+//! catalog-preview
+//* mobile width
+section.catalog-preview {
+    height: 280px;
+    background: {
+        image: url("../images/hero-mobile.png");
+        repeat: no-repeat;
+        position: center -18px;
+    }
+    .info {
+        display: block;
+        height: 280px;
+        h1 {
+            @extend %t-h1-mobile;
+            padding-top: 70px;
+            text-align: center;
+        }
+    }
+
+    .catalog {
+        .catalog-item {
+            @extend %t-catalog-btn-mobile;
+            display: block;
+            position: relative;
+            padding: 28px 30px;
+            text-align: left;
+            color: white;
+            background: {
+                image: url("../images/interior.png");
+                color: $light-green;
+                repeat: no-repeat;
+                size: 40px 62px;
+                position: 86.8% 25px;
+            }
+            transition: all 0.3s ease-in-out;
+            &:first-child {
+                &:hover {
+                    margin-top: -6px;
+                    padding-bottom: 35px;
+                }
+            }
+            &:last-child {
+                background-color: $dark-green;
+                background: {
+                    image: url("../images/toy.png");
+                    repeat: no-repeat;
+                    size: 60px 60px;
+                    position: 89.5% 22px;
+                }
+                &:hover {
+                    margin-top: -6px;
+                    padding-bottom: 35px;
+                }
+            }
+        }
+    }
+}
+
+//* wide-mobile width
+@media (min-width: $mobile-wide-width) {
+}
+
+//* tablet width
+@media (min-width: $tablet-width) {
+    section.catalog-preview {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 745px;
+        margin-top: -46px;
+        background: {
+            image: url("../images/hero-desktop.png");
+            color: #f9f9f9;
+            repeat: no-repeat;
+            position: center 0;
+        }
+        .info {
+            display: block;
+            height: 100%;
+            h1 {
+                font-size: 43px;
+                line-height: 50px;
+                text-align: center;
+                padding-top: 150px;
+            }
+        }
+        .catalog-container {
+            margin-top: auto;
+            width: 100%;
+            .catalog {
+                position: relative;
+                margin: 0 50px;
+                display: flex;
+                .catalog-item {
+                    font-size: 20px;
+                    line-height: 30px;
+                    text-align: left;
+                    font-weight: bold;
+                    display: block;
+                    width: 100%;
+                    padding: 26px 36px 36px;
+                    color: #fff;
+                    background-color: $light-green;
+                    background: {
+                        image: url("../images/interior.png");
+                        repeat: no-repeat;
+                        size: 40px 65px;
+                        position: 87.8% 27px;
+                    }
+                    &:last-child {
+                        background-color: $dark-green;
+                        background: {
+                            image: url("../images/toy.png");
+                            repeat: no-repeat;
+                            size: 60px 60px;
+                            position: 88% 29px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//* desktop width
+@media (min-width: $desktop-width) {
+    section.catalog-preview {
+        height: 765px;
+        margin-top: 0;
+        background-color: #f9f9f9;
+        background-position: center center;
+        .info {
+            h1 {
+                padding-top: 145px;
+                font-size: 53px;
+                line-height: 57px;
+            }
+        }
+        .catalog-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            margin-top: auto;
+            .catalog {
+                margin: 0;
+                .catalog-item {
+                    background-position: 92.6% 27px;
+                    &:last-child {
+                        background-position: 92% 29px;
+                    }
+                }
+            }
+            &::after {
+                content: none;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 24px;
+            max-height: 34px;
+            padding-top: 0.6%;
+            background-image: url("../images/zigzag-fill-desktop.svg");
+            background-repeat: repeat-x;
+            background-position: 50% 100%;
+            background-size: contain;
+        }
+    }
+}

@@ -1,0 +1,146 @@
+%t-h1 {
+    font-size: 53px;
+    line-height: 57px;
+    font-weight: bold;
+}
+%t-h2 {
+    font-size: 53px;
+    line-height: 57px;
+    font-weight: bold;
+}
+%t-h3 {
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: bold;
+}
+%t-span-mobile {
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+@mixin t-p {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+%t-p {
+    @include t-p;
+}
+
+@mixin t-tablet-menu {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+%t-tablet-menu {
+    @include t-tablet-menu;
+}
+
+%t-p-fb {
+    font-family: "Open Sans Regular", sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+@mixin t-menu {
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+%t-menu {
+    @include t-menu;
+}
+
+%t-table {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: normal;
+}
+%t-btn {
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+%t-list {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: normal;
+}
+
+// mobile fonts
+%t-navmenu-mobile {
+    font-family: $ff-opensans;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+%t-h1-mobile {
+    font-family: $ff-opensans;
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+%t-catalog-btn-mobile {
+    font-family: $ff-opensans;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+%t-card-h3-mobile {
+    font-family: $ff-opensans;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+%t-card-span-mobile {
+    font-family: $ff-opensans;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+%t-card-p-mobile {
+    font-family: $ff-opensans;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+%t-card-details-mobile {
+    font-family: $ff-opensans;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: left;
+    font-weight: normal;
+}
+
+%t-btn-mobile {
+    font-family: $ff-opensans;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+%t-h2-mobile {
+    font-family: $ff-opensans;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+%t-info-list {
+    font-family: $ff-opensans;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,170 @@
+//! contacts
+//* mobile width
+
+section.contacts {
+    background-color: #fff;
+    h3 {
+        font-size: 18px;
+        line-height: 30px;
+        color: black;
+        padding-top: 35px;
+    }
+    .contacts-content {
+        display: flex;
+        flex-direction: column;
+        &-item {
+            display: flex;
+            padding-top: 28px;
+            p,
+            .email,
+            address {
+                font-size: 15px;
+                line-height: 30px;
+                font-style: normal;
+            }
+            .email {
+                border-bottom: 1px solid $light-green;
+            }
+            p {
+                margin-right: 30px;
+            }
+        }
+    }
+    .contacts-map {
+        height: 455px;
+        margin-top: 38px;
+        .google-map {
+            border: none;
+            padding: 0;
+            margin: 0;
+            height: 450px;
+            width: 100%;
+        }
+    }
+    .contacts-btn {
+        padding: 37px 0;
+        .btn {
+            font-size: 18px;
+            line-height: 20px;
+            padding: 15px 0;
+        }
+    }
+}
+
+//* tablet width
+
+@media (min-width: $tablet-width) {
+    section.contacts {
+        position: relative;
+        background: {
+            image: url('../images/flag.png');
+            repeat: no-repeat;
+            position: 92.7% 5.7%;
+        }
+        h3 {
+            margin: 0;
+            margin-left: -5px;
+            padding: 0;
+            padding-top: 60px;
+            font-size: 43px;
+            line-height: 50px;
+        }
+        .contacts-content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin: 0;
+            .contacts-content-item {
+                padding-top: 50px;
+                flex-basis: 50%;
+                p,
+                .email,
+                address {
+                    margin: 0;
+                    margin-left: 24px;
+                    padding: 0;
+                    font-family: 'Open Sans Regular', serif;
+                    font-size: 17px;
+                    line-height: 30px;
+                }
+            }
+        }
+        .contacts-map {
+            margin-top: 56px;
+            .google-map {
+                width: 100%;
+            }
+        }
+        .contacts-btn {
+            max-width: 230px;
+            margin: 0 auto;
+            margin-top: 17px;
+            padding-bottom: 57px;
+            .btn {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+//* desktop width
+@media (min-width: $desktop-width) {
+    section.contacts {
+        display: flex;
+        position: relative;
+        margin-top: 75px;
+        margin-bottom: 105px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 50px;
+        max-width: 1250px;
+        background-position: 13.5% 16%;
+        .container {
+            margin: 0;
+            padding: 0;
+            position: static;
+            margin-right: 0;
+            margin-left: 224px;
+            h3 {
+                font-size: 53px;
+                line-height: 57px;
+                padding-top: 68px;
+            }
+            &:last-child {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .contacts-content {
+            display: flex;
+            flex-direction: column;
+            .contacts-content-item {
+                font-size: 17px;
+                line-height: 30px;
+                padding-top: 28px;
+                padding-left: 1px;
+                &:first-child {
+                    padding-top: 49px;
+                }
+            }
+        }
+        .contacts-map {
+            margin: 0;
+            padding: 0;
+            width: 525px;
+            height: 460px;
+            margin-left: auto;
+            .google-map {
+                width: 100%;
+            }
+        }
+        .contacts-btn {
+            position: absolute;
+            min-width: 230px;
+            margin: 0;
+            padding: 0;
+            left: 276px;
+            bottom: 5px;
+        }
+    }
+}

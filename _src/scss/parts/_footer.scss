@@ -1,0 +1,109 @@
+//! footer
+
+//* mobile width
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: $footer-bg;
+    padding-bottom: 30px;
+
+    .footer-container {
+        padding: 0 30px;
+    }
+
+    .footer-tablet-logo,
+    .footer-logo {
+        display: none;
+    }
+
+    .footer-socials {
+        display: flex;
+        flex-direction: row;
+        padding-top: 25px;
+        padding-left: 26px;
+        padding-right: 30px;
+        padding-bottom: 28px;
+        border-bottom: 2px solid #e5e5e5;
+        li {
+            margin-top: auto;
+            &:nth-child(2) {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+        }
+    }
+    .nav-item {
+        display: flex;
+        justify-content: center;
+        &:last-child {
+            width: 100%;
+        }
+        span {
+            font-size: 19px;
+            line-height: 18px;
+            font-weight: bold;
+            padding-top: 21px;
+        }
+        .logo {
+            margin-left: 30px;
+            margin-top: 16px;
+        }
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .footer-nav {
+        .footer-container {
+            padding: 0 50px;
+            margin-top: 26px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .footer-tablet-logo {
+            display: block;
+            width: 102px;
+            height: 45px;
+            padding-bottom: 5px;
+        }
+        .footer-logo {
+            display: none;
+        }
+        .nav-item {
+            width: auto;
+            .logo {
+                margin-top: 5px;
+                width: 27px;
+                height: 34px;
+            }
+            span {
+                padding: 0;
+                margin-top: 10px;
+            }
+            &:last-child {
+                width: auto;
+            }
+        }
+        .footer-socials {
+            margin-left: 80px;
+            margin-top: 3px;
+            border: none;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .footer-nav {
+        .footer-container {
+            max-width: 1250px;
+            margin: auto;
+            margin-top: 21px;
+            padding: 0 100px;
+        }
+        .footer-socials {
+            margin-left: 305px;
+            margin-right: 245px;
+        }
+    }
+}

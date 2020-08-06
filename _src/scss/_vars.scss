@@ -1,0 +1,39 @@
+// font vars
+
+$ff-opensans: "Open Sans", serif;
+
+// color vars
+
+$light-green: #63d1bb;
+$dark-green: #56c3b2;
+$dark-grey: #767676;
+$grey: #444444;
+$light-grey: #f9f9f9;
+$footer-bg: #f1f1f1;
+
+// weight
+
+$extrabold: 800;
+$light: 300;
+
+// width
+
+$mobile-width: 320px;
+$mobile-wide-width: 380px;
+$tablet-width: 768px;
+$desktop-width: 1250px;
+
+// breakpoints
+
+$zones: (
+    mobile: (
+        max: 767
+    ),
+    tablet: (
+        min: 768,
+        max: 1249
+    ),
+    desktop: (
+        min: 1250
+    )
+) !default;

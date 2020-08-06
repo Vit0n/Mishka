@@ -1,0 +1,50 @@
+//* Mixins
+@function toRem($px) {
+    @return ($px / $root-font-size) * 1rem;
+}
+
+@mixin response-to($zone, $all-zones: $zones) {
+    @each $zone-name, $zone-data in $all-zones {
+        @if $zone-name == $zone {
+            @if map-get($zone-data, max) != null {
+                @media (max-width: #{map-get($zone-data, max)}px) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+@mixin response($zone, $all-zones: $zones) {
+    @each $zone-name, $zone-data in $all-zones {
+        @if $zone-name == $zone {
+            @if map-get($zone-data, min) == null {
+                @media (max-width: #{map-get($zone-data, max)}px) {
+                    @content;
+                }
+            } @else if map-get($zone-data, max) == null {
+                @media (min-width: #{map-get($zone-data, min)}px) {
+                    @content;
+                }
+            } @else {
+                @media (min-width: #{map-get($zone-data, min)}px) and (max-width: #{map-get($zone-data, max)}px) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+@mixin response-from($zone, $all-zones: $zones) {
+    @each $zone-name, $zone-data in $all-zones {
+        @if $zone-name == $zone {
+            @if map-get($zone-data, min) != null {
+                @media (min-width: #{map-get($zone-data, min)}px) {
+                    @content;
+                }
+            } @else {
+                @content;
+            }
+        }
+    }
+}

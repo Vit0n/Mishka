@@ -1,0 +1,127 @@
+//! about-us
+
+//* mobile width
+section.about-us {
+    background-color: #fff;
+    h2 {
+        @extend %t-h2-mobile;
+        padding-top: 25px;
+    }
+    .info-list {
+        display: flex;
+        flex-direction: column;
+        .info-item {
+            @extend %t-info-list;
+            margin: 0;
+            padding: 0;
+            padding-top: 84px;
+
+            background-image: url("../images/icon-1.png");
+            background-position: 8px 31px;
+            background-repeat: no-repeat;
+        }
+        .flower {
+            background-image: url("../images/icon-1.png");
+            background-position: 8px 31px;
+        }
+        .dollar {
+            background-image: url("../images/icon-3.png");
+            background-position: 0px 31px;
+        }
+        .heart {
+            background-image: url("../images/icon-5.png");
+            background-position: 8px 36px;
+        }
+        .ball {
+            background-image: url("../images/icon-2.png");
+            background-position: 3px 31px;
+        }
+        .rocket {
+            padding-top: 80px;
+            background-image: url("../images/icon-4.png");
+            background-position: -4px 31px;
+        }
+        .gift {
+            background-image: url("../images/icon-6.png");
+            background-position: 3px 33px;
+        }
+    }
+}
+
+//* tablet width
+
+@media (min-width: $tablet-width) {
+    section.about-us {
+        h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 43px;
+            line-height: 50px;
+            padding-top: 49px;
+            margin-left: -5px;
+        }
+        .info-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-basis: 50%;
+            padding-bottom: 83px;
+            .info-item {
+                font-size: 20px;
+                line-height: 22px;
+                flex-basis: 50%;
+                margin: 0;
+                padding: 0;
+                padding-top: 103px;
+                letter-spacing: 0.01em;
+                background-position: 8px 40px;
+            }
+            .flower {
+                order: 1;
+                background-position: 3% 43%;
+            }
+            .dollar {
+                padding-top: 109px;
+                background-position: 0% 46%;
+                order: 3;
+            }
+            .heart {
+                order: 5;
+                background-position: 3% 51%;
+                padding-top: 115px;
+            }
+            .ball {
+                order: 2;
+                background-position: 1% 46%;
+            }
+            .rocket {
+                padding-top: 109px;
+                order: 4;
+                background-position: -2px 48%;
+            }
+            .gift {
+                order: 6;
+                background-position: 1% 49%;
+                padding-top: 115px;
+            }
+        }
+    }
+}
+
+//* desktop width
+
+@media (min-width: $desktop-width) {
+    section.about-us {
+        h2 {
+            font-size: 53px;
+            line-height: 57px;
+            padding-top: 60px;
+            padding-left: 175px;
+        }
+        .info-list {
+            display: flex;
+            padding: 0px 175px;
+            padding-bottom: 90px;
+        }
+    }
+}

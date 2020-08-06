@@ -1,0 +1,336 @@
+//* header
+
+.navbar--wrapper {
+    position: relative;
+}
+
+//* hamburger menu ( only mobile width )
+
+.menu-btn {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    opacity: 1;
+    transition: width 0.4s linear;
+
+    &--wrapper {
+        position: fixed;
+        top: 30px;
+        left: calc(50% + 110px);
+        z-index: 5;
+        display: block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        outline: none;
+
+        @include response-from(tablet) {
+            display: none;
+        }
+    }
+
+    &::before {
+        content: '';
+        top: -6px;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        background-color: #000;
+        transform: rotate(0deg);
+        transition: transform 0.4s linear, top 0.4s linear, height 0.4s linear;
+        transform-origin: left bottom;
+    }
+
+    &::after {
+        content: '';
+        top: 6px;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        background-color: #000;
+        transform: rotate(0deg);
+        transition: transform 0.4s linear, top 0.4s linear, height 0.4s linear;
+        transform-origin: top left;
+    }
+
+    &--closed {
+        width: 0px;
+        &::before {
+            top: -9px;
+            width: 25px;
+            transform: rotate(43deg);
+        }
+        &::after {
+            top: 9px;
+            width: 25px;
+            transform: rotate(-43deg);
+        }
+    }
+}
+
+//* navbar menu
+
+.navbar {
+    @extend %t-navmenu-mobile;
+    margin-top: 0;
+    transition: margin-top 0.7s linear;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include response-from(tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 0 50px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 88px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #ececec;
+        }
+    }
+
+    @include response-from(desktop) {
+        justify-content: space-around;
+        padding: 0 15px;
+
+        &::after {
+            top: 94px;
+        }
+    }
+
+    &.navbar--hidden {
+        margin-top: -100%;
+
+        @include response-from(tablet) {
+            margin-top: 0;
+        }
+    }
+
+    .logo--wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px 0;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+
+        @include response-from(tablet) {
+            justify-content: flex-start;
+            border: none;
+            flex-basis: 48%;
+        }
+
+        @include response-from(desktop) {
+            padding: 0;
+            align-items: center;
+            flex-basis: auto;
+        }
+
+        .logo {
+            display: block;
+            width: 90px;
+            height: 38px;
+            transition: opacity 0.5s linear;
+            background: {
+                image: url('../images/logo-mobile.svg');
+                repeat: no-repeat;
+            }
+
+            @include response(tablet) {
+                width: 115px;
+                height: 47px;
+                background: {
+                    repeat: no-repeat;
+                    position: center;
+                    image: url('../images/logo-tablet.svg');
+                }
+            }
+            @include response(desktop) {
+                width: 160px;
+                height: 75px;
+                background-image: url('../images/mishka-logo-desktop.png');
+            }
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+    .menu {
+        @include response-from(tablet) {
+            display: flex;
+        }
+
+        &__item {
+            border-bottom: 1px solid #ececec;
+            padding: 30px 0 30px 75px;
+            position: relative;
+
+            @include response-from(tablet) {
+                border: none;
+
+                &.search-item {
+                    font-size: 0;
+                    padding: 35px 33px;
+                    width: 20px;
+                    height: 21px;
+                    border-right: 1px solid #ececec;
+                    border-left: 1px solid #ececec;
+                }
+            }
+
+            @include response-from(desktop) {
+                padding: 35px;
+
+                &.search-item {
+                    padding: 37px 33px;
+                }
+                &.cart-item {
+                    padding-left: 75px;
+                }
+            }
+
+            a {
+                cursor: pointer;
+                transition: color 0.4s linear;
+
+                &:hover {
+                    color: #666666;
+                }
+                &:hover .search-icon,
+                &:hover .cart-icon {
+                    opacity: 1;
+                }
+                .search-icon {
+                    position: absolute;
+                    top: 29px;
+                    left: 30px;
+                    width: 21px;
+                    height: 21px;
+                    opacity: 0.15;
+                    background: {
+                        image: url('../images/search.svg');
+                        repeat: no-repeat;
+                        position: 0px 1px;
+                    }
+
+                    @include response-from(tablet) {
+                        top: calc(50% - 11px);
+                        left: calc(50% - 9px);
+                    }
+                }
+
+                &:hover > .search-icon {
+                    opacity: 1;
+                    background-image: url('../images/search-green.svg');
+                }
+
+                .cart-icon {
+                    position: absolute;
+                    top: center;
+                    left: 30px;
+                    width: 21px;
+                    height: 22px;
+                    opacity: 0.15;
+                    background: {
+                        image: url('../images/cart.svg');
+                        repeat: no-repeat;
+                        position: 0px 1px;
+                    }
+                }
+
+                &:hover > .cart-icon {
+                    opacity: 1;
+                    background-image: url('../images/cart-green.svg');
+                }
+            }
+        }
+
+        &--pages {
+            @include response-from(tablet) {
+                @include t-tablet-menu;
+
+                order: 2;
+                z-index: 5;
+                .menu__item {
+                    padding: 20px 35px 0 0;
+                }
+            }
+            @include response-from(desktop) {
+                @include t-menu;
+
+                order: -1;
+                .menu__item {
+                    padding: 35px;
+                    &:first-child {
+                        border-right: 1px solid #e7e7e7;
+                    }
+                }
+            }
+        }
+
+        &--news {
+            @include response-to(tablet) {
+                display: none;
+            }
+            @include response-from(desktop) {
+                @include t-tablet-menu;
+
+                position: absolute;
+                left: 20px;
+                top: 95px;
+                z-index: 5;
+                display: flex;
+                flex-basis: 100%;
+                margin-left: 35px;
+
+                .menu__item {
+                    padding: 22px 35px;
+                    padding-right: 25px;
+                }
+            }
+        }
+    }
+
+    span {
+        @extend %t-p;
+        display: none;
+
+        @include response-from(tablet) {
+            position: absolute;
+            top: 110px;
+            right: 50px;
+            z-index: 5;
+            display: block;
+        }
+        @include response-from(desktop) {
+            right: 85px;
+        }
+    }
+}
+
+.navbar--open {
+    margin-top: -340px;
+
+    @include response(tablet) {
+        margin-top: 0;
+    }
+    @include response(desktop) {
+        margin-top: 0;
+    }
+    .logo--wrapper {
+        order: 2;
+    }
+}
